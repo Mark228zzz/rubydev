@@ -5,7 +5,7 @@ class Item
   @@discount = 0.1
 
   def initialize(options = {})
-    @realprice  = options[:price]
+    @real_price  = options[:price]
     @name = options[:name]
   end
 
