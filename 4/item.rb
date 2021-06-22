@@ -1,12 +1,16 @@
 class Item
   attr_reader :real_price, :name
-  attr_writer :price
+  attr_writer :price, :weight
+  attr_accessor :weight, :name, :price
 
   @@discount = 0.1
 
   def initialize(options = {})
     @real_price  = options[:price]
+    @weight = options[:weight]
+    @price = options[:price]
     @name = options[:name]
+
   end
 
   def info
