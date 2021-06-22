@@ -1,9 +1,10 @@
 module ItemContainer
 
   module ClassMethods
+    MIN_PRICE = 100
 
-    def self.min_price
-      100
+    def min_price
+      MIN_PRICE
     end
   end
 
