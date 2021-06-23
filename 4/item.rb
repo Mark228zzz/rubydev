@@ -1,13 +1,11 @@
 class Item
-  attr_reader :real_price, :name
-  attr_writer :price, :weight
-  attr_accessor :weight, :name, :price
+  attr_reader :real_price
+  attr_accessor :name, :price
 
   @@discount = 0.1
 
   def initialize(options = {})
     @real_price  = options[:price]
-    @weight = options[:weight]
     @price = options[:price]
     @name = options[:name]
 
@@ -34,6 +32,10 @@ class Item
     if @real_price
       (@real_price - @real_price * self.class.discount) + tax
     end
+  end
+
+  def to_s
+    "#{self.name}:#{self.price}:#{self.weight}"
   end
 
   private
