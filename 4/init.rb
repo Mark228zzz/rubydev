@@ -7,7 +7,7 @@ require_relative'order'
 require_relative'string'
 
 @items = []
-@items << RealItem.new({
+@items << VirtualItem.new({
             price: 240,
             weight: 200,
             name: 'car'

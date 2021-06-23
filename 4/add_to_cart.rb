@@ -8,4 +8,8 @@ ARGV.each do |arg|
   @items.each { |obj| cart.add_item obj if arg == obj.name }
 end
 cart.read_from_file
+begin
 cart.save_to_file
+rescue ItemNotSupported
+  puts'You have VirtualItem in your cart'
+end
