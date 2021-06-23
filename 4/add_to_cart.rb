@@ -11,5 +11,6 @@ cart.read_from_file
 begin
 cart.save_to_file
 rescue ItemNotSupported
-  puts'You have VirtualItem in your cart'
+  puts'You have VirtualItem or AntiqueItem in your cart'
+  + "#{Cart::UNSUPPORTED_ITEM}"
 end
