@@ -22,7 +22,6 @@ class Cart
 
     @items.uniq!
     rescue
-    p 'No file'
     File.open(@owner.to_s + '_cart.txt', 'w') {}
     puts "File #{@owner}_cart.txt created"
     end
