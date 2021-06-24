@@ -26,10 +26,31 @@ module ItemContainer
     def delete_invalid_items
       @items.delete_if { |i| i.price.nil? }
     end
+
     def count_valid_items
       @items.count { |i| i.price }
     end
+
+
+    def method_missing(method_name)
+      if method_name =~ /^all_/
+        show_all_item_with_name(method_name.to_s
+                                           .sub(/^all_/, '')
+                                           .chomp('s'))
+      else
+        super
+      end
+    end
+
+
+
+    private
+
+    def show_all_item_with_name(name)
+      @items.map { |i| i if name == i.name }.compact
+    end
   end
+
 
   def self.included(classes)
     classes.extend ClassMethods

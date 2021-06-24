@@ -9,7 +9,7 @@ ARGV.each do |arg|
 end
 cart.read_from_file
 begin
-cart.save_to_file
+  cart.save_to_file
 rescue ItemNotSupported
   puts'You have VirtualItem or AntiqueItem in your cart'
   + "#{Cart::UNSUPPORTED_ITEM}"
