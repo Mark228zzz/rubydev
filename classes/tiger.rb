@@ -6,7 +6,7 @@ class Tiger < Animal
 
   def attack(enemy)
     if enemy.speed > self.speed
-      p 'enemy miss'
+      p 'miss'
     else
       p 'caught'
     end
